@@ -3,7 +3,7 @@ App para simular a rentabilidade dos investimentos em renda fixa
 
 ## Referências
 * https://github.com/easynvest/simulador-rendafixa
-* https://easynvest.github.io/simulador-rendafixa/
+* https://easynvest.github.io/simulador-rendafixa
 
 ## Tecnologias
 * Ionic 3
@@ -15,7 +15,7 @@ App para simular a rentabilidade dos investimentos em renda fixa
 
 ## Utilizando a API
 
- - **URL**: https://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate
+ - **URL**: https://api-simulator-calc.easynvest.com.br/calculator/simulate
  - **Method**: POST
  - **URL Params**: 
     ```javascript
@@ -53,7 +53,7 @@ App para simular a rentabilidade dos investimentos em renda fixa
     }
     ```
 
-- **Simulação**: https://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate?investedAmount=1000.0&index=CDI&rate=94.5&isTaxFree=false&maturityDate=2017-12-31
+- **Simulação**: https://api-simulator-calc.easynvest.com.br/calculator/simulate?investedAmount=1000.0&index=CDI&rate=94.5&isTaxFree=false&maturityDate=2017-12-31
 
 ## Licença
 

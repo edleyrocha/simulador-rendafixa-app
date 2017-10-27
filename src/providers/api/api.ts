@@ -15,7 +15,7 @@ import 'rxjs/add/operator/map';
 
 export class ApiProvider {
 
-  baseUrl: string = "https://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate/";
+  baseUrl: string = "https://api-simulator-calc.easynvest.com.br/calculator/simulate";
 
   constructor(public http: Http) {
     //
@@ -40,10 +40,29 @@ export class ApiProvider {
         //mapear a função, retornando uma response (com os dados obtidos)
         .map(res => res.json())
         .subscribe(
+        data=>{
           //deu certo e trouxe resultado em JSON, transferi pra variavel "data" e poder ler cada campo do json
-          data=>{
-            let textElement = document.createElement('p');
-            textElement.textContent = `                  
+          // data=>{
+          //   let textElement = document.createElement('p');
+          //   textElement.textContent = `                  
+          //    Resultado da simulação: R$ ${data.grossAmount}
+          //    Rendimento total de: R$ ${data.grossAmountProfit}
+
+          //    Valor aplicado inicialmente: R$ ${data.investmentParameter.investedAmount}
+          //    Valor bruto do investimento: R$ ${data.grossAmountProfit}
+          //    Valor do rendimento: R$ ${data.grossAmountProfit}
+          //    IR sobre o investimento: ${data.taxesAmount} (${data.taxesRate}%)
+          //    Valor líquido do investimento: R$ ${data.netAmount}
+
+          //    Data de resgate: ${this.convertDate(data.investmentParameter.maturityDate)}
+          //    Dias corridos: ${data.investmentParameter.maturityTotalDays}
+          //    Rendimento mensal: ${data.monthlyGrossRateProfit}%
+          //    Percentual do CDI do papel: ${data.investmentParameter.rate}%
+          //    Rentabilidade anual: ${data.investmentParameter.yearlyInterestRate}%
+          //    Rentabilidade no período: ${data.annualGrossRateProfit}%
+          //   `;
+          //   document.body.appendChild(textElement);
+          alert(` 
              Resultado da simulação: R$ ${data.grossAmount}
              Rendimento total de: R$ ${data.grossAmountProfit}
 
@@ -59,8 +78,7 @@ export class ApiProvider {
              Percentual do CDI do papel: ${data.investmentParameter.rate}%
              Rentabilidade anual: ${data.investmentParameter.yearlyInterestRate}%
              Rentabilidade no período: ${data.annualGrossRateProfit}%
-            `;
-            document.body.appendChild(textElement);
+            `)
           },
           err=>{
             alert(err);

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Observable } from 'rxjs/Rx';
 import { ToastController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import { LoadingController } from 'ionic-angular';
