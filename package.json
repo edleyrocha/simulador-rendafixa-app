@@ -1,8 +1,8 @@
 {
-    "name": "RendaFixa",
+    "name": "SimularRendaFixa",
     "version": "0.0.1",
-    "author": "Ionic Framework",
-    "homepage": "http://ionicframework.com/",
+    "author": "Leonardo Gregianin <leogregianin@gmail.com>",
+    "homepage": "https://www.easynvest.com.br",
     "private": true,
     "scripts": {
         "clean": "ionic-app-scripts clean",
@@ -42,7 +42,7 @@
         "@types/core-js": "^0.9.43",
         "typescript": "2.3.4"
     },
-    "description": "An Ionic project",
+    "description": "Simulador de Renda Fixa",
     "cordova": {
         "plugins": {
             "cordova-plugin-device": {},

@@ -8,10 +8,13 @@ App para simular a rentabilidade dos investimentos em renda fixa
 ## Tecnologias
 * Ionic 3
 
-# To run:
+# Run:
 * > npm install
 * > ionic serve -l (with live reload)
 
+# Deploy:
+* > ionic cordova run android
+* > ionic cordova run ios
 
 ## Utilizando a API
 

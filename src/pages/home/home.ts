@@ -28,7 +28,7 @@ export class HomePage {
     if ((valor == '') || (taxa == '') || (data == '')) {
 
       let toast = this.toast.create({
-        message: 'Informar todos os campos',
+        message: 'Informe todos os campos',
         duration: 5000,
         position: 'bottom'
       });
