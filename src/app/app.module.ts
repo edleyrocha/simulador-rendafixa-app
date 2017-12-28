@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SimulaPage } from '../pages/simula/simula';
 import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    SimulaPage,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { ApiProvider } from '../providers/api/api';
   entryComponents: [
     MyApp,
     HomePage,
+    SimulaPage,
   ],
   providers: [
     StatusBar,

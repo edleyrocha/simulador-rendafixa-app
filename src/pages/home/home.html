@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="light-gray">
     <ion-title text-wrap text-center>Simulação Renda Fixa</ion-title>
   </ion-navbar>
 
@@ -31,12 +31,12 @@
       <ion-item>
         <ion-input [(ngModel)]="taxa"
                    type="number"
-                   placeholder="100%"
+                   placeholder="exemplo 98.5%"
                    clearInput clearOnEdit="false">
         </ion-input>
       </ion-item>
 
-    <button ion-button icon-left block outline
+    <button ion-button round outline icon-left
       color="light" 
       class="button"
       (click)="simular(valor, data, taxa)">

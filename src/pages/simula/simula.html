@@ -1,0 +1,106 @@
+
+<ion-header>
+
+  <ion-navbar color="light-gray">
+    <ion-title text-wrap text-center>Resultado Simulação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="primary-font">
+  <div class="container">
+
+	  <ion-item>
+      <ion-label stacked>Resultado da simulação</ion-label>
+      <ion-input 
+        type="number">{{resultadoSimulacao}}
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Rendimento total</ion-label>
+      <ion-input 
+        type="number">{{rendimentoTotal}}
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Valor aplicado inicialmente</ion-label>
+        <ion-input 
+          type="number">{{montanteInvestido}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Valor bruto do investimento</ion-label>
+        <ion-input 
+          type="number">{{rendimentoTotal}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Valor do rendimento</ion-label>
+        <ion-input 
+          type="number">{{rendimentoTotal}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>IR sobre o investimento</ion-label>
+        <ion-input 
+          type="text">{{taxaIR}} ({{taxaIRporcent}}%)
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Valor líquido do investimento</ion-label>
+        <ion-input 
+          type="text">{{montanteLiquido}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Data de resgate</ion-label>
+        <ion-input 
+          type="text">{{dataResgaste}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Dias corridos</ion-label>
+        <ion-input 
+          type="text">{{diasCorridos}}
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Rendimento mensal</ion-label>
+        <ion-input 
+          type="text">{{rendimentoMensal}}%
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Percentual do CDI do papel</ion-label>
+        <ion-input 
+          type="text">{{taxaCDI}}%
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Rentabilidade anual</ion-label>
+        <ion-input 
+          type="text">{{rentAnual}}%
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked>Rentabilidade no período</ion-label>
+        <ion-input 
+          type="text">{{rentPeriodo}}%
+        </ion-input>
+    </ion-item>
+  
+  </div>
+
+</ion-content>
