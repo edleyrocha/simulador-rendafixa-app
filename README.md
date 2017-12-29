@@ -6,11 +6,11 @@ App para simular a rentabilidade dos investimentos em renda fixa
 * npm install
 
 ## Executar o projeto:
-* > ionic serve -l (with live reload)
+* ionic serve -l (with live reload)
 
 ## Deploy para o mobile:
-* > ionic cordova run android
-* > ionic cordova run ios
+* ionic cordova run android
+* ionic cordova run ios
 
 <img src="resources/Screenshot1.png" width="500" height="500" />
 <img src="resources/Screenshot2.png" width="400" height="600" />
