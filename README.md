@@ -1,22 +1,25 @@
 # simulador-rendafixa-app
 App para simular a rentabilidade dos investimentos em renda fixa
 
-## Referências
-* https://github.com/easynvest/simulador-rendafixa
-* https://easynvest.github.io/simulador-rendafixa
+## Instalação do Ionic e dependências do projeto:
+* npm install -g cordova ionic [mais detalhes](https://ionicframework.com/getting-started)
+* npm install
 
-## Tecnologias
-* Ionic 3
-
-# Run:
-* > npm install
+## Executar o projeto:
 * > ionic serve -l (with live reload)
 
-# Deploy:
+## Deploy para o mobile:
 * > ionic cordova run android
 * > ionic cordova run ios
 
+<img src="resources/Screenshot1.png" width="500" height="500" />
+<img src="resources/Screenshot2.png" width="400" height="600" />
+<img src="resources/Screenshot3.png" width="400" height="600" />
+
+
 ## Utilizando a API
+
+A API que calcula os valores futuros é [este projeto](https://github.com/easynvest/api-simulator-calc). Abaixo segue algumas informações sobre como utilizamos a API no simulador.
 
  - **URL**: https://api-simulator-calc.easynvest.com.br/calculator/simulate
  - **Method**: POST
@@ -58,7 +61,12 @@ App para simular a rentabilidade dos investimentos em renda fixa
 
 - **Simulação**: https://api-simulator-calc.easynvest.com.br/calculator/simulate?investedAmount=1000.0&index=CDI&rate=94.5&isTaxFree=false&maturityDate=2017-12-31
 
+## Referências
+* https://github.com/easynvest/simulador-rendafixa
+* https://easynvest.github.io/simulador-rendafixa
+
+## Direitos autorais
+Este projeto utiliza a API para os cálculos da rentabilidade e logomarca de propriedade da Easynvest - Título Corretora de Valores SA, inscrita sob o CNPJ 62.169.875/0001-79
+
 ## Licença
-
 * [Licença](LICENSE)
-
