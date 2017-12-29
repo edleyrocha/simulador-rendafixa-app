@@ -44,7 +44,7 @@ export class ApiProvider {
               let taxaIR             = data.taxesAmount;
               let taxaIRporcent      = data.taxesRate;
               let montanteLiquido    = data.netAmount;
-              let dataResgaste       = data.investmentParameter.maturityDate;
+              let dataResgaste       = this.convertDate(data.investmentParameter.maturityDate);
               let diasCorridos       = data.investmentParameter.maturityTotalDays;
               let rendimentoMensal   = data.monthlyGrossRateProfit;
               let taxaCDI            = data.investmentParameter.rate;
