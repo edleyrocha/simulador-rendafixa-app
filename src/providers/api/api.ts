@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { NavController, App } from 'ionic-angular';
-import { SimulaPage } from '../../pages/simula/simula';
 
 import 'rxjs/add/operator/map';
 
@@ -51,7 +50,7 @@ export class ApiProvider {
               let rentAnual          = data.investmentParameter.yearlyInterestRate;
               let rentPeriodo        = data.annualGrossRateProfit;
               
-              this.nav.push(SimulaPage, {
+              this.nav.push('SimulaPage', {
                         resultadoSimulacao,
                         rendimentoTotal,
                         montanteInvestido,

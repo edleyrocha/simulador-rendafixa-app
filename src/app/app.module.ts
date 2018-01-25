@@ -6,26 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { SimulaPage } from '../pages/simula/simula';
 import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    SimulaPage,
+    MyApp
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage,
-    SimulaPage,
+    MyApp
   ],
   providers: [
     StatusBar,
