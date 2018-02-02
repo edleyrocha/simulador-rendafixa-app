@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { NavController, ToastController, LoadingController } from 'ionic-angular';
-=======
-import { NavController, IonicPage } from 'ionic-angular';
-import {Observable} from 'rxjs/Rx';
->>>>>>> a47b9ea22f8fd9514f4eedc02777e2fd50b32e34
+import { ToastController, NavController, IonicPage } from 'ionic-angular';
+import { Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { LoadingController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api'
 
-<<<<<<< HEAD
-=======
 @IonicPage()
->>>>>>> a47b9ea22f8fd9514f4eedc02777e2fd50b32e34
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
