@@ -59,7 +59,7 @@ A API que calcula os valores futuros é [este projeto](https://github.com/easynv
     }
     ```
 
-- **Simulação**: https://api-simulator-calc.easynvest.com.br/calculator/simulate?investedAmount=1000.0&index=CDI&rate=94.5&isTaxFree=false&maturityDate=2017-12-31
+- **Simulação**: https://api-simulator-calc.easynvest.com.br/calculator/simulate?investedAmount=1000.0&index=CDI&rate=94.5&isTaxFree=false&maturityDate=2030-12-31
 
 ## Referências
 * https://github.com/easynvest/simulador-rendafixa

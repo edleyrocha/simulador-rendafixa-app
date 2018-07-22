@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ToastController, NavController, IonicPage } from 'ionic-angular';
-import 'rxjs/add/operator/map';
 import { LoadingController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { ToastController, NavController, IonicPage } from 'ionic-angular';
 
 @IonicPage()
 
@@ -12,19 +13,21 @@ import { ApiProvider } from '../../providers/api/api'
 })
 
 export class HomePage {
-  valor; data; taxa;
-  constructor(public navCtrl: NavController, 
-              public api: ApiProvider, 
-              private toast: ToastController,
-              public loading: LoadingController) {
+  valor; data_vencto; taxa;
+  valores: Observable<any>;
+  
+    constructor(public navCtrl: NavController, 
+                public api: ApiProvider, 
+                private toast: ToastController,
+                public loading: LoadingController) {
     this.valor = '';
     this.taxa = '';
-    this.data = '';
+    this.data_vencto = '';
   }
 
-  public validate(valor, data, taxa) {
+  public validate(valor, data_vencto, taxa) {
     
-    if ((valor == '') || (taxa == '') || (data == '')) {
+    if ((valor == '') || (taxa == '') || (data_vencto == '')) {
 
       let toast = this.toast.create({
         message: 'Informe todos os campos',
@@ -51,9 +54,9 @@ export class HomePage {
     }
   }
 
-  public simular(valor, data, taxa) {
+  public simular(valor, data_vencto, taxa) {
 
-    if (this.validate(valor, data, taxa)) {
+    if (this.validate(valor, data_vencto, taxa)) {
 
       let loader = this.loading.create({
         content: 'Simulando...'
@@ -61,12 +64,12 @@ export class HomePage {
 
       loader.present();
       
-      this.api.simular(valor, taxa, data);
+      this.valores = this.api.getSimular(valor, taxa, data_vencto);
+
+      loader.dismiss();
       
-      setTimeout(() => {
-        loader.dismiss();
-      }, 2000);
+      this.navCtrl.push('SimulaPage', { resultadoValores: this.valores });
 
     }
- }
+  }
 }

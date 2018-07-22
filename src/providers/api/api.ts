@@ -1,72 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, Headers } from '@angular/http';
-import { NavController, App } from 'ionic-angular';
-
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 
 export class ApiProvider {
 
-  public nav: NavController;
-  
   baseUrl: string = "https://api-simulator-calc.easynvest.com.br/calculator/simulate";
 
-  constructor(
-    public app:App,
-    public http: Http) 
-  {
-    this.nav = app.getActiveNav();
-  }  
+  constructor(public http: Http) { }  
 
   public convertDate(inputFormat) {
     function pad(s) { return (s < 10) ? '0' + s : s; }
     let d = new Date(inputFormat)
     return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
   }
-
-  public simular(valor, taxa, data){
+  
+  getSimular(valor, taxa, data_vencto){
     let headers = new Headers
     headers.append('Content-Type','application/x-www-form-urlencoded');
-    headers.append('Access-Control-Allow-Methods','GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    headers.append('Access-Control-Allow-Methods','GET');
     headers.append('Access-Control-Allow-Headers','Origin, Content-Type, X-Auth-Token, X-AMZ-META-TOKEN-ID, X-AMZ-META-TOKEN-SECRET');
+    headers.append('User-Agent','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36');
     let options = new RequestOptions({headers : headers});
     
-    this.http
-        .get(`${this.baseUrl}/?investedAmount=${valor}&index=CDI&rate=${taxa}&isTaxFree=false&maturityDate=${data}`, options)
-        .map(res => res.json())
-        .subscribe(
-          data=>{
-              let resultadoSimulacao = data.grossAmount;
-              let rendimentoTotal    = data.grossAmountProfit;
-              let montanteInvestido  = data.investmentParameter.investedAmount;
-              let taxaIR             = data.taxesAmount;
-              let taxaIRporcent      = data.taxesRate;
-              let montanteLiquido    = data.netAmount;
-              let dataResgaste       = this.convertDate(data.investmentParameter.maturityDate);
-              let diasCorridos       = data.investmentParameter.maturityTotalDays;
-              let rendimentoMensal   = data.monthlyGrossRateProfit;
-              let taxaCDI            = data.investmentParameter.rate;
-              let rentAnual          = data.investmentParameter.yearlyInterestRate;
-              let rentPeriodo        = data.annualGrossRateProfit;
-              
-              this.nav.push('SimulaPage', {
-                        resultadoSimulacao,
-                        rendimentoTotal,
-                        montanteInvestido,
-                        taxaIR,
-                        taxaIRporcent,
-                        montanteLiquido,
-                        dataResgaste,
-                        diasCorridos,
-                        rendimentoMensal,
-                        taxaCDI,
-                        rentAnual,
-                        rentPeriodo});
-          },
-          err=>{
-            alert(err);
-          }
-        );    
+    return this.http
+    .get(`${this.baseUrl}/?investedAmount=${valor}&index=CDI&rate=${taxa}&isTaxFree=false&maturityDate=${data_vencto}`, options)
+    .map(res => res.json()
+    .do(this.logResponse)
+    .catch(this.catchError))
+  }
+
+  private catchError(error: Response | any) {
+    console.log(error);
+    return Observable.throw(error.json().error || "Server error!");
+  }  
+  
+  private logResponse(res: Response) {
+    console.log(res);
   }
 }

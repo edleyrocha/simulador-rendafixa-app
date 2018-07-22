@@ -8,24 +8,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 
 export class SimulaPage {
-
-  resultadoSimulacao   = '';
-  rendimentoTotal      = '';
-  montanteInvestido    = '';
-  taxaIR               = '';
-  taxaIRporcent        = '';
-  montanteLiquido      = '';
-  dataResgaste         = '';
-  diasCorridos         = '';
-  rendimentoMensal     = '';
-  taxaCDI              = '';
-  rentAnual            = '';
-  rentPeriodo          = '';
+  resultadoValores: any;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams
   ) {
+    this.resultadoValores = this.navParams.get('resultadoValores');
+    
+    /*
     this.resultadoSimulacao   = this.navParams.get('resultadoSimulacao');
     this.rendimentoTotal      = this.navParams.get('rendimentoTotal');
     this.montanteInvestido    = this.navParams.get('montanteInvestido');
@@ -38,5 +29,6 @@ export class SimulaPage {
     this.taxaCDI              = this.navParams.get('taxaCDI');
     this.rentAnual            = this.navParams.get('rentAnual');
     this.rentPeriodo          = this.navParams.get('rentPeriodo');
+    */
   }
 }
